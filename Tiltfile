@@ -1,5 +1,7 @@
+# load("../blogarchive/app.tilt", "blogarchive")
+# blogarchive("../blogarchive")
+
 load("../front/app.tilt", "front")
 front("../front")
 
-load("../blogarchive/app.tilt", "blogarchive")
-blogarchive("../blogarchive")
+local_resource("infra", cmd="./setup_infra.sh")
