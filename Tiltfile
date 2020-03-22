@@ -4,8 +4,6 @@
 load("../front/app.tilt", "front")
 front("../front", resource_deps=["infra"])
 
-include("../externalprojects/Tiltfile")
-
 local_resource(
     "argocd", 
     cmd="echo Password is `kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2`", 
@@ -14,3 +12,5 @@ local_resource(
 )
 
 local_resource("infra", cmd="./setup_infra.sh")
+
+include("../externalprojects/Tiltfile")
